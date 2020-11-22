@@ -157,6 +157,9 @@ class RecordWhistleViewController: UIViewController, AVAudioRecorderDelegate {
     }
     
     @objc func nextTapped() {
+        if whistlePlayer.play() {
+            whistlePlayer.stop()
+        }
         let vc = SelectGenreViewController()
         navigationController?.pushViewController(vc, animated: true)
     }
